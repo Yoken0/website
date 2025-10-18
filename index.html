@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kenzo Matsuo - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Avenir:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <!-- Preload critical images for faster loading -->
+    <link rel="preload" as="image" href="static/logo.png">
+    <link rel="preload" as="image" href="static/logo2.png">
+    
+    <!-- Critical CSS - Load first for fastest rendering -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/components.css">
+</head>
+<body style="background-color: var(--ctp-base); color: var(--ctp-text);">
+
+    <!-- Header & Navigation -->
+    <header id="main-header" style="background-color: var(--ctp-surface0);" class="fixed top-0 left-0 right-0 z-50 transition-transform duration-100 ease-in-out">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <a href="#" id="logo-link" class="logo hover-scale transition-colors animate-fade-in-left">
+                    <img src="static/logo.png" 
+                         alt="Kenzo Matsuo Logo"
+                         width="80"
+                         height="80"
+                         loading="eager"
+                         decoding="async">
+                </a>
+                <nav class="hidden md:flex space-x-8 animate-fade-in-right">
+                    <a href="#about" style="color: var(--ctp-subtext1);" class="hover-scale transition-colors delay-100">About</a>
+                    <a href="#projects" style="color: var(--ctp-subtext1);" class="hover-scale transition-colors delay-200">Projects</a>
+                    <a href="#contact" style="color: var(--ctp-subtext1);" class="hover-scale transition-colors delay-300">Contact</a>
+                </nav>
+                <button id="mobile-menu-button" style="color: var(--ctp-subtext1);" class="md:hidden hover-scale focus:outline-none animate-fade-in-right delay-400">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" style="background-color: var(--ctp-surface0);" class="hidden md:hidden">
+            <a href="#about" style="color: var(--ctp-subtext1);" class="block py-2 px-6 hover:opacity-80">About</a>
+            <a href="#projects" style="color: var(--ctp-subtext1);" class="block py-2 px-6 hover:opacity-80">Projects</a>
+            <a href="#contact" style="color: var(--ctp-subtext1);" class="block py-2 px-6 hover:opacity-80">Contact</a>
+        </div>
+    </header>
+    
+    <!-- Header hover zone -->
+    <div id="header-hover-zone" class="fixed top-0 left-0 right-0 h-20 z-40 pointer-events-none"></div>
+
+    <main class="container mx-auto px-4 md:px-6 pt-16 md:pt-24">
+
+        <!-- Hero Section -->
+        <section id="home" class="min-h-[85vh] md:min-h-[90vh] flex flex-col md:flex-row items-center justify-center py-8 md:py-0">
+            <div class="w-full md:w-2/3 text-center md:text-left mb-8 md:mb-0 px-4 md:px-0">
+                <h1 class="text-4xl sm:text-5xl md:text-7xl font-light leading-tight mb-4 animate-fade-in-up delay-100" style="color: var(--ctp-text);">
+                    <span style="color: #ffffff; font-family: 'Avenir', sans-serif; font-weight: 500;">Kenzo</span> 
+                    <span style="color: #606060; font-family: 'Avenir', sans-serif; font-weight: 300;">Matsuo</span>
+                </h1>
+                <h2 style="color: var(--ctp-mauve);" class="text-xl sm:text-2xl md:text-3xl mb-6 md:mb-8 font-light animate-fade-in-up delay-100">Full Stack Developer</h2>
+                <p style="color: var(--ctp-subtext0);" class="max-w-lg mx-auto md:mx-0 mb-6 md:mb-8 animate-fade-in-up delay-200 text-base sm:text-lg">I build fast and responsive applications, turning your dreams into reality.</p>
+                <a href="#contact" style="background-color: var(--ctp-mauve); color: var(--ctp-base);" class="hover-scale font-bold py-3 px-6 sm:py-4 sm:px-8 rounded-lg transition-all duration-300 animate-fade-in-up delay-300 animate-glow inline-block text-sm sm:text-base">
+                    Get In Touch
+                </a>
+            </div>
+            <div class="w-full md:w-1/3 flex justify-center mt-4 md:mt-0">
+                <div class="w-64 h-80 sm:w-80 sm:h-96 md:w-96 md:h-[28rem] animate-fade-in-right delay-100 overflow-hidden" style="background: linear-gradient(135deg, #2a2a2a, #1a1a1a);">
+                    <img src="static/logo2.png" 
+                         alt="Kenzo Matsuo Portrait"
+                         width="384"
+                         height="448"
+                         loading="lazy"
+                         decoding="async"
+                         class="w-full h-full object-cover object-top">
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-12 md:py-20">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 animate-fade-in-up">About Me</h2>
+            <div class="w-24 h-1 mx-auto mb-8 md:mb-12 animate-fade-in-up delay-100" style="background-color: var(--ctp-mauve);"></div>
+            <div class="max-w-8xl mx-auto px-4 md:px-0">
+                <div style="background-color: var(--ctp-surface1);" class="rounded-lg p-6 md:p-8 shadow-lg hover-lift animate-fade-in-up delay-200">
+                    <p style="color: var(--ctp-subtext0);" class="mb-6 text-sm animate-fade-in-up delay-250">
+                        Hello, I'm Kenzo Matsuo, a passionate developer with over 4 years of experience in creating dynamic and responsive applications. I specialize in C++ and have a strong background in both front-end and back-end development.
+                    </p>
+                    <p style="color: var(--ctp-subtext0);" class="mb-6 text-sm animate-fade-in-up delay-350">
+                        I believe in the power of clean code, thoughtful design, and continuous learning. When I'm not coding, you can find me exploring new technologies, gaming, or hiking in the great outdoors.
+                    </p>
+                    
+                    <!-- Mobile View More Content (Hidden by default) -->
+                    <div id="about-more-content" class="hidden md:block">
+                        <p style="color: var(--ctp-subtext0);" class="mb-6 text-sm animate-fade-in-up delay-450">
+                            My journey in software development began with a fascination for solving complex problems and building solutions that make a real impact. I've worked on everything from high-performance C++ applications to modern web applications using React and Node.js, always striving to write maintainable and efficient code.
+                        </p>
+                        <p style="color: var(--ctp-subtext0);" class="mb-6 text-sm animate-fade-in-up delay-550">
+                            I'm particularly passionate about AI and machine learning, having recently built RAG-powered applications that can process thousands of documents daily. I love the challenge of optimizing algorithms and creating systems that can scale efficiently while maintaining high performance.
+                        </p>
+                        <p style="color: var(--ctp-subtext0);" class="mb-6 text-sm animate-fade-in-up delay-650">
+                            When I'm not immersed in code, I enjoy staying active through hiking and exploring new trails. I also have a deep appreciation for gaming, which often inspires creative problem-solving approaches in my development work. I believe that diverse experiences outside of programming make me a more well-rounded and innovative developer.
+                        </p>
+                    </div>
+                    
+                    <!-- Mobile View More Button -->
+                    <button id="about-view-more" class="md:hidden text-sm font-medium px-4 py-2 rounded-lg transition-all duration-300 hover-scale" style="background-color: var(--ctp-surface2); color: var(--ctp-text);">
+                        View More
+                    </button>
+                    
+                    <!-- Skills organized by category -->
+                    <div id="about-skills-content" class="hidden md:block">
+                        <h3 class="text-lg font-semibold mb-3" style="color: var(--ctp-text);">Technical Skills</h3>
+                        
+                        <!-- Programming Languages -->
+                        <div class="mb-4">
+                            <h4 class="text-sm font-medium mb-2" style="color: var(--ctp-subtext1);">Programming Languages</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span style="background-color: var(--ctp-surface2); color: var(--ctp-text);" class="text-xs font-medium px-4 py-2 rounded-full">JavaScript</span>
+                                <span style="background-color: var(--ctp-surface2); color: var(--ctp-text);" class="text-xs font-medium px-4 py-2 rounded-full">C++</span>
+                                <span style="background-color: var(--ctp-surface2); color: var(--ctp-text);" class="text-xs font-medium px-4 py-2 rounded-full">Python</span>
+                                <span style="background-color: var(--ctp-surface2); color: var(--ctp-text);" class="text-xs font-medium px-4 py-2 rounded-full">C</span>
+                                <span style="background-color: var(--ctp-surface2); color: var(--ctp-text);" class="text-xs font-medium px-4 py-2 rounded-full">Java</span>
+                                <span style="background-color: var(--ctp-surface2); color: var(--ctp-text);" class="text-xs font-medium px-4 py-2 rounded-full">React</span>
+                                <span style="background-color: var(--ctp-surface2); color: var(--ctp-text);" class="text-xs font-medium px-4 py-2 rounded-full">Node.js</span>
+                                <span style="background-color: var(--ctp-surface2); color: var(--ctp-text);" class="text-xs font-medium px-4 py-2 rounded-full">Tailwind CSS</span>
+                            </div>
+                        </div>
+
+                        <!-- Tools & Frameworks -->
+                        <div class="mb-4">
+                            <h4 class="text-sm font-medium mb-2" style="color: var(--ctp-subtext1);">Tools & Frameworks</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span style="background-color: var(--ctp-surface2); color: var(--ctp-text);" class="text-xs font-medium px-4 py-2 rounded-full">Git</span>
+                                <span style="background-color: var(--ctp-surface2); color: var(--ctp-text);" class="text-xs font-medium px-4 py-2 rounded-full">PyTorch</span>
+                                <span style="background-color: var(--ctp-surface2); color: var(--ctp-text);" class="text-xs font-medium px-4 py-2 rounded-full">Flask</span>
+                                <span style="background-color: var(--ctp-surface2); color: var(--ctp-text);" class="text-xs font-medium px-4 py-2 rounded-full">Unix/Linux</span>
+                                <span style="background-color: var(--ctp-surface2); color: var(--ctp-text);" class="text-xs font-medium px-4 py-2 rounded-full">JupyterLab</span>
+                                <span style="background-color: var(--ctp-surface2); color: var(--ctp-text);" class="text-xs font-medium px-4 py-2 rounded-full">Spring Boot</span>
+                                <span style="background-color: var(--ctp-surface2); color: var(--ctp-text);" class="text-xs font-medium px-4 py-2 rounded-full">Next.js</span>
+                                <span style="background-color: var(--ctp-surface2); color: var(--ctp-text);" class="text-xs font-medium px-4 py-2 rounded-full">JUnit</span>
+                                <span style="background-color: var(--ctp-surface2); color: var(--ctp-text);" class="text-xs font-medium px-4 py-2 rounded-full">SvelteKit</span>
+                                <span style="background-color: var(--ctp-surface2); color: var(--ctp-text);" class="text-xs font-medium px-4 py-2 rounded-full">TexStudio</span>
+                            </div>
+                        </div>
+
+                        <!-- Concepts & Methodologies -->
+                        <div class="mb-4">
+                            <h4 class="text-sm font-medium mb-2" style="color: var(--ctp-subtext1);">Concepts & Methodologies</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span style="background-color: var(--ctp-surface2); color: var(--ctp-text);" class="text-xs font-medium px-4 py-2 rounded-full">Artificial Intelligence</span>
+                                <span style="background-color: var(--ctp-surface2); color: var(--ctp-text);" class="text-xs font-medium px-4 py-2 rounded-full">Agile</span>
+                                <span style="background-color: var(--ctp-surface2); color: var(--ctp-text);" class="text-xs font-medium px-4 py-2 rounded-full">Agentic AI</span>
+                                <span style="background-color: var(--ctp-surface2); color: var(--ctp-text);" class="text-xs font-medium px-4 py-2 rounded-full">Test-Driven Development</span>
+                                <span style="background-color: var(--ctp-surface2); color: var(--ctp-text);" class="text-xs font-medium px-4 py-2 rounded-full">Software Engineering</span>
+                                <span style="background-color: var(--ctp-surface2); color: var(--ctp-text);" class="text-xs font-medium px-4 py-2 rounded-full">Backend</span>
+                                <span style="background-color: var(--ctp-surface2); color: var(--ctp-text);" class="text-xs font-medium px-4 py-2 rounded-full">Cloud</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Mobile View Less Button -->
+                    <button id="about-view-less" class="md:hidden text-sm font-medium px-4 py-2 rounded-lg transition-all duration-300 hover-scale mt-6" style="background-color: var(--ctp-surface2); color: var(--ctp-text);">
+                        View Less
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-12 md:py-20">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 animate-fade-in-up">My Projects</h2>
+            <div class="w-24 h-1 mx-auto mb-8 md:mb-12 animate-fade-in-up delay-100" style="background-color: var(--ctp-mauve);"></div>
+            <div class="space-y-6 md:space-y-8 px-4 md:px-0">
+                
+                <!-- Pike Project -->
+                <div style="background-color: var(--ctp-surface1);" class="rounded-lg p-6 md:p-8 shadow-lg hover-lift animate-fade-in-up delay-200">
+                    <div class="flex flex-col md:flex-row md:items-start gap-4 md:gap-6">
+                        <div class="md:w-1/3">
+                            <h3 class="text-xl md:text-2xl font-bold mb-2">Pike</h3>
+                            
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span style="background-color: var(--ctp-surface2); color: var(--ctp-text);" class="text-xs font-medium px-3 py-1 rounded-full">Python</span>
+                                <span style="background-color: var(--ctp-surface2); color: var(--ctp-text);" class="text-xs font-medium px-3 py-1 rounded-full">TypeScript</span>
+                                <span style="background-color: var(--ctp-surface2); color: var(--ctp-text);" class="text-xs font-medium px-3 py-1 rounded-full">Google Cloud Vertex</span>
+                            </div>
+                        </div>
+                        <div class="md:w-2/3">
+                            <ul style="color: var(--ctp-subtext0);" class="space-y-2 text-sm">
+                                <li>• Architected a RAG-powered assistant to autonomously source knowledge via web scraping and file uploads, processing over 1000 documents daily.</li>
+                                <li>• Integrated Google Cloud Vertex AI to drive a RAG-based chat interface, improving response accuracy by 15% compared to baseline models.</li>
+                            </ul>
+                            
+                            <!-- Mobile View More Content (Hidden by default) -->
+                            <div id="pike-more-content" class="hidden md:block">
+                                <ul style="color: var(--ctp-subtext0);" class="space-y-2 text-sm mt-2">
+                                <li>• Implemented vector search for efficient, high-speed similarity queries across a knowledge base of 500,000 data points, reducing retrieval time by 40%.</li>
+                                <li>• Developed an automatic citation feature that links AI-generated responses back to their source documents, validating 98% of information presented.</li>
+                                <li>• Containerized the application with Docker, enabling seamless deployment and a 75% faster setup time across diverse environments.</li>
+                            </ul>
+                            </div>
+                            
+                            <!-- Mobile View More Button -->
+                            <button id="pike-view-more" class="md:hidden text-sm font-medium px-4 py-2 rounded-lg transition-all duration-300 hover-scale mt-4" style="background-color: var(--ctp-surface2); color: var(--ctp-text);">
+                                View More
+                            </button>
+                            
+                            <div class="mt-4">
+                                <a href="https://github.com/Yoken0/pike" target="_blank" rel="noopener noreferrer" 
+                                   class="inline-flex items-center gap-2 px-4 py-2 rounded-lg transition-all duration-300 hover-scale"
+                                   style="background-color: var(--ctp-mauve); color: var(--ctp-base);">
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                    </svg>
+                                    <span class="font-medium">View on GitHub</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Neural Network Library Project -->
+                <div style="background-color: var(--ctp-surface1);" class="rounded-lg p-6 md:p-8 shadow-lg hover-lift animate-fade-in-up delay-300">
+                    <div class="flex flex-col md:flex-row md:items-start gap-4 md:gap-6">
+                        <div class="md:w-1/3">
+                            <h3 class="text-xl md:text-2xl font-bold mb-2">Neural Network Library From Scratch</h3>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span style="background-color: var(--ctp-surface2); color: var(--ctp-text);" class="text-xs font-medium px-3 py-1 rounded-full">C++</span>
+                            </div>
+                        </div>
+                        <div class="md:w-2/3">
+                            <ul style="color: var(--ctp-subtext0);" class="space-y-2 text-sm">
+                                <li>• Engineered a custom Tensor class to manage multi-dimensional data, achieving a 25% performance improvement over standard array operations.</li>
+                                <li>• Implemented 6 distinct modular layers (Linear, ReLU, Softmax, etc.) to allow for flexible neural network architecture design.</li>
+                            </ul>
+                            
+                            <!-- Mobile View More Content (Hidden by default) -->
+                            <div id="nn-more-content" class="hidden md:block">
+                                <ul style="color: var(--ctp-subtext0);" class="space-y-2 text-sm mt-2">
+                                    <li>• Developed a manual backpropagation algorithm from scratch, reducing training loss by 90% from initial values over 1000 epochs (e.g., from 0.1 to 0.01).</li>
+                                    <li>• Constructed the library using only the C++ Standard Library, resulting in a lightweight solution with a memory footprint 30% smaller than comparable frameworks.</li>
+                                    <li>• Achieved 95% accuracy in digit recognition tasks using the custom-built neural network on a sample dataset.</li>
+                                </ul>
+                            </div>
+                            
+                            <!-- Mobile View More Button -->
+                            <button id="nn-view-more" class="md:hidden text-sm font-medium px-4 py-2 rounded-lg transition-all duration-300 hover-scale mt-4" style="background-color: var(--ctp-surface2); color: var(--ctp-text);">
+                                View More
+                            </button>
+                            
+                            <div class="mt-4">
+                                <a href="https://github.com/Yoken0/NN_library/" target="_blank" rel="noopener noreferrer" 
+                                   class="inline-flex items-center gap-2 px-4 py-2 rounded-lg transition-all duration-300 hover-scale"
+                                   style="background-color: var(--ctp-mauve); color: var(--ctp-base);">
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                    </svg>
+                                    <span class="font-medium">View on GitHub</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Algorithm Visualizer Project -->
+                <div style="background-color: var(--ctp-surface1);" class="rounded-lg p-6 md:p-8 shadow-lg hover-lift animate-fade-in-up delay-400">
+                    <div class="flex flex-col md:flex-row md:items-start gap-4 md:gap-6">
+                        <div class="md:w-1/3">
+                            <h3 class="text-xl md:text-2xl font-bold mb-2">Algorithm Visualizer</h3>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span style="background-color: var(--ctp-surface2); color: var(--ctp-text);" class="text-xs font-medium px-3 py-1 rounded-full">JavaScript</span>
+                                <span style="background-color: var(--ctp-surface2); color: var(--ctp-text);" class="text-xs font-medium px-3 py-1 rounded-full">HTML5</span>
+                                <span style="background-color: var(--ctp-surface2); color: var(--ctp-text);" class="text-xs font-medium px-3 py-1 rounded-full">CSS3</span>
+                            </div>
+                        </div>
+                        <div class="md:w-2/3">
+                            <ul style="color: var(--ctp-subtext0);" class="space-y-2 text-sm">
+                                <li>• Built an interactive web application that visualizes sorting algorithms (Bubble Sort, Quick Sort, Merge Sort) with real-time animations and color-coded states.</li>
+                                <li>• Implemented graph algorithms including Dijkstra's shortest path, BFS, and DFS with dynamic node and edge visualization for educational purposes.</li>
+                            </ul>
+                            
+                            <!-- Mobile View More Content (Hidden by default) -->
+                            <div id="algorithm-more-content" class="hidden md:block">
+                                <ul style="color: var(--ctp-subtext0);" class="space-y-2 text-sm mt-2">
+                                    <li>• Created responsive design with interactive controls allowing users to adjust array sizes (10-150 elements) and set custom parameters for algorithms.</li>
+                                    <li>• Developed smooth animations using CSS transitions and JavaScript timing functions, supporting up to 150 elements for optimal performance.</li>
+                                    <li>• Built modular architecture with vanilla JavaScript (no frameworks) for lightweight implementation and cross-browser compatibility.</li>
+                                </ul>
+                            </div>
+                            
+                            <!-- Mobile View More Button -->
+                            <button id="algorithm-view-more" class="md:hidden text-sm font-medium px-4 py-2 rounded-lg transition-all duration-300 hover-scale mt-4" style="background-color: var(--ctp-surface2); color: var(--ctp-text);">
+                                View More
+                            </button>
+                            
+                            <div class="mt-4">
+                                <a href="https://github.com/Yoken0/Algorithm-Visualizer" target="_blank" rel="noopener noreferrer" 
+                                   class="inline-flex items-center gap-2 px-4 py-2 rounded-lg transition-all duration-300 hover-scale"
+                                   style="background-color: var(--ctp-mauve); color: var(--ctp-base);">
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                    </svg>
+                                    <span class="font-medium">View on GitHub</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Version Control Software -->
+                <div style="background-color: var(--ctp-surface1);" class="rounded-lg p-6 md:p-8 shadow-lg hover-lift animate-fade-in-up delay-500">
+                    <div class="flex flex-col md:flex-row md:items-start gap-4 md:gap-6">
+                        <div class="md:w-1/3">
+                            <h3 class="text-xl md:text-2xl font-bold mb-2">Version Control Software</h3>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span style="background-color: var(--ctp-surface2); color: var(--ctp-text);" class="text-xs font-medium px-3 py-1 rounded-full">Python</span>
+                            </div>
+                        </div>
+                        <div class="md:w-2/3">
+                            <ul style="color: var(--ctp-subtext0);" class="space-y-2 text-sm">
+                                <li>• Produced detailed technical documentation and maintained knowledge repositories to support project scalability</li>
+                                <li>• Implemented core version control functionality with branch management</li>
+                            </ul>
+                            
+                            <!-- Mobile View More Content (Hidden by default) -->
+                            <div id="vcs-more-content" class="hidden md:block">
+                                <ul style="color: var(--ctp-subtext0);" class="space-y-2 text-sm mt-2">
+                                    <li>• Developed efficient diff algorithms for file comparison</li>
+                                    <li>• Created command-line interface with intuitive user experience</li>
+                                </ul>
+                            </div>
+                            
+                            <!-- Mobile View More Button -->
+                            <button id="vcs-view-more" class="md:hidden text-sm font-medium px-4 py-2 rounded-lg transition-all duration-300 hover-scale mt-4" style="background-color: var(--ctp-surface2); color: var(--ctp-text);">
+                                View More
+                            </button>
+                            
+                            <div class="mt-4">
+                                <a href="https://github.com/Yoken0/py_git" target="_blank" rel="noopener noreferrer" 
+                                   class="inline-flex items-center gap-2 px-4 py-2 rounded-lg transition-all duration-300 hover-scale"
+                                   style="background-color: var(--ctp-mauve); color: var(--ctp-base);">
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                    </svg>
+                                    <span class="font-medium">View on GitHub</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recipe Search Web Application -->
+                <div style="background-color: var(--ctp-surface1);" class="rounded-lg p-6 md:p-8 shadow-lg hover-lift animate-fade-in-up delay-600">
+                    <div class="flex flex-col md:flex-row md:items-start gap-4 md:gap-6">
+                        <div class="md:w-1/3">
+                            <h3 class="text-xl md:text-2xl font-bold mb-2">Recipe Search Web Application</h3>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span style="background-color: var(--ctp-surface2); color: var(--ctp-text);" class="text-xs font-medium px-3 py-1 rounded-full">Python</span>
+                                <span style="background-color: var(--ctp-surface2); color: var(--ctp-text);" class="text-xs font-medium px-3 py-1 rounded-full">Flask</span>
+                                <span style="background-color: var(--ctp-surface2); color: var(--ctp-text);" class="text-xs font-medium px-3 py-1 rounded-full">JavaScript</span>
+                                <span style="background-color: var(--ctp-surface2); color: var(--ctp-text);" class="text-xs font-medium px-3 py-1 rounded-full">MongoDB</span>
+                            </div>
+                        </div>
+                        <div class="md:w-2/3">
+                            <ul style="color: var(--ctp-subtext0);" class="space-y-2 text-sm">
+                                <li>• Produced detailed technical documentation and maintained knowledge repositories to support project scalability</li>
+                                <li>• Implemented advanced search functionality with filtering capabilities</li>
+                            </ul>
+                            
+                            <!-- Mobile View More Content (Hidden by default) -->
+                            <div id="recipe-more-content" class="hidden md:block">
+                                <ul style="color: var(--ctp-subtext0);" class="space-y-2 text-sm mt-2">
+                                    <li>• Built responsive web interface with modern UI/UX design principles</li>
+                                    <li>• Integrated database management with efficient query optimization</li>
+                                </ul>
+                            </div>
+                            
+                            <!-- Mobile View More Button -->
+                            <button id="recipe-view-more" class="md:hidden text-sm font-medium px-4 py-2 rounded-lg transition-all duration-300 hover-scale mt-4" style="background-color: var(--ctp-surface2); color: var(--ctp-text);">
+                                View More
+                            </button>
+                            
+                            <div class="mt-4">
+                                <a href="https://github.com/ericanderson85/RecipeGenerator" target="_blank" rel="noopener noreferrer" 
+                                   class="inline-flex items-center gap-2 px-4 py-2 rounded-lg transition-all duration-300 hover-scale"
+                                   style="background-color: var(--ctp-mauve); color: var(--ctp-base);">
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                    </svg>
+                                    <span class="font-medium">View on GitHub</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-12 md:py-20">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 animate-fade-in-up">Contact Me</h2>
+            <div class="w-24 h-1 mx-auto mb-8 md:mb-12 animate-fade-in-up delay-100" style="background-color: var(--ctp-mauve);"></div>
+            <div class="max-w-xl mx-auto px-4 md:px-0">
+                <p style="color: var(--ctp-subtext0);" class="text-center mb-8 animate-fade-in-up delay-200">
+                    Have a project in mind or just want to say hello? Feel free to reach out!
+                </p>
+                <div class="text-center space-y-6 animate-fade-in-up delay-300">
+                    <div>
+                        <h3 style="color: var(--ctp-subtext1);" class="text-lg font-medium mb-2">Email</h3>
+                        <a href="mailto:kenzomatsuo@gmail.com" style="color: var(--ctp-mauve);" class="text-xl hover-scale transition-colors">
+                            kenzomatsuo@gmail.com
+                        </a>
+                    </div>
+                    <div>
+                        <h3 style="color: var(--ctp-subtext1);" class="text-lg font-medium mb-2">Phone</h3>
+                        <a href="tel:+16178030303" style="color: var(--ctp-mauve);" class="text-xl hover-scale transition-colors">
+                            +1 617 803 0303
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer style="background-color: var(--ctp-surface0);">
+        <div class="container mx-auto px-6 py-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                <div style="color: var(--ctp-subtext0);" class="text-center md:text-left">
+            <p>&copy; 2025 Kenzo Matsuo. All Rights Reserved.</p>
+                </div>
+                <div class="flex gap-4 relative z-50">
+                    <a href="https://github.com/Yoken0" target="_blank" rel="noopener noreferrer" 
+                       class="flex items-center gap-2 px-4 py-2 transition-all duration-300 hover-scale relative z-50"
+                       style="background-color: var(--ctp-surface1); color: var(--ctp-text); border-radius: 0;">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                        <span class="font-medium">GitHub</span>
+                    </a>
+                    <a href="https://www.instagram.com/kenzomatsu0/" target="_blank" rel="noopener noreferrer" 
+                       class="flex items-center gap-2 px-4 py-2 transition-all duration-300 hover-scale relative z-50"
+                       style="background-color: var(--ctp-surface1); color: var(--ctp-text); border-radius: 0;">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                        <span class="font-medium">Instagram</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/kenzo-matsuo/" target="_blank" rel="noopener noreferrer" 
+                       class="flex items-center gap-2 px-4 py-2 transition-all duration-300 hover-scale relative z-50"
+                       style="background-color: var(--ctp-surface1); color: var(--ctp-text); border-radius: 0;">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                        </svg>
+                        <span class="font-medium">LinkedIn</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+
+</body>
+</html>
+

@@ -1,0 +1,52 @@
+/* Base Styles and Color Variables */
+
+body {
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    letter-spacing: -0.01em;
+}
+
+.font-light {
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+}
+
+.font-medium {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+}
+
+.font-bold {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+}
+
+/* Minimalist Dark Color Variables */
+:root {
+    --ctp-rosewater: #f5e0dc;
+    --ctp-flamingo: #f2cdcd;
+    --ctp-pink: #f5c2e7;
+    --ctp-mauve: #cba6f7;
+    --ctp-red: #f38ba8;
+    --ctp-maroon: #eba0ac;
+    --ctp-peach: #fab387;
+    --ctp-yellow: #f9e1ae;
+    --ctp-green: #a6e3a1;
+    --ctp-teal: #94e2d5;
+    --ctp-sky: #89dceb;
+    --ctp-sapphire: #74c7ec;
+    --ctp-blue: #89b4fa;
+    --ctp-lavender: #b4befe;
+    --ctp-text: #ffffff;
+    --ctp-subtext1: #e0e0e0;
+    --ctp-subtext0: #b0b0b0;
+    --ctp-overlay2: #9399b2;
+    --ctp-overlay1: #7f849c;
+    --ctp-overlay0: #6c7086;
+    --ctp-surface2: #2a2a2a;
+    --ctp-surface1: #1a1a1a;
+    --ctp-surface0: #0f0f0f;
+    --ctp-base: #000000;
+    --ctp-mantle: #181825;
+    --ctp-crust: #11111b;
+}
